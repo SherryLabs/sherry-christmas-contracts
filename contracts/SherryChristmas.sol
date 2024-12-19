@@ -34,7 +34,7 @@ contract SherryChristmas is ERC1155, Ownable {
             tokenExists(_tokenId),
             "SherryChristmas: URI query for nonexistent token"
         );
-        return string(abi.encodePacked(baseURI, Strings.toString(_tokenId)));
+        return string(abi.encodePacked(baseURI, Strings.toString(_tokenId), ".json"));
     }
 
     function mint(uint256 _tokenId) external {
