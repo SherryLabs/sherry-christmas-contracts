@@ -4,7 +4,9 @@
   "description": "NFT Collection for christmas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy:local": "npx hardhat ignition deploy ignition/modules/SherryChristmas.ts",
+    "deploy:fuji": "npx hardhat ignition deploy ignition/modules/SherryChristmas.ts --network avalancheFuji --verify",
+    "deploy:avalanche": "npx hardhat ignition deploy ignition/modules/SherryChristmas.ts --network avalanche --verify"
   },
   "author": "Gilberts Ahumada",
   "license": "ISC",

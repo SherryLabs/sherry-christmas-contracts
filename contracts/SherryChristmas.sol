@@ -20,7 +20,7 @@ contract SherryChristmas is ERC1155, Ownable {
 
     event UriUpdated(string indexed uri);
 
-    constructor(address initialOwner) ERC1155("") Ownable(initialOwner) {}
+    constructor() ERC1155("") Ownable(msg.sender) {}
 
     function setURI(string memory _newuri) public onlyOwner {
         baseURI = _newuri;

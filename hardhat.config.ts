@@ -20,6 +20,21 @@ const config: HardhatUserConfig = {
       url: "https://api.avax-test.network/ext/bc/C/rpc",
       accounts: [deployer],
     },
+  },
+  etherscan: {
+    apiKey: {
+      avalancheFuji: process.env.AVALANCHE_FUJI_ETHERSCAN_API_KEY || "",
+    },
+    customChains: [
+      {
+        network: "avalancheFuji",
+        chainId: 43113,
+        urls: {
+          apiURL: "https://api.avascan.info/v2/network/testnet/evm/43113/etherscan",
+          browserURL: "https://cchain.explorer.avax-test.network"
+        }
+      }
+    ]
   }
 };
 
