@@ -12,9 +12,9 @@ contract SherryChristmas is ERC1155, Ownable {
     uint8 public constant MAX_SUPPLY = 5;
 
     // Total number of unique token types
-    uint8 public constant TOTAL_TOKENS = 20;
+    uint8 public constant TOTAL_TOKENS = 10;
 
-    string private baseURI = "https://ipfs.io/ipfs/CID/";
+    string private baseURI = "https://ipfs.io/ipfs/bafybeienmol5afjl3mwbr7gq3lw4sr5hvjznitlnwzuoejkyjdeyjynt7q/";
 
     mapping(uint256 => uint256) private _minted;
 
