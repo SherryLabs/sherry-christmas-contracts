@@ -24,6 +24,7 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: {
       avalancheFuji: process.env.AVALANCHE_FUJI_ETHERSCAN_API_KEY || "",
+      avalanche: process.env.AVALANCHE_FUJI_ETHERSCAN_API_KEY || ""
     },
     customChains: [
       {
@@ -32,6 +33,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api.avascan.info/v2/network/testnet/evm/43113/etherscan",
           browserURL: "https://cchain.explorer.avax-test.network"
+        }
+      },
+      {
+        network: "avalanche",
+        chainId: 43114,
+        urls: {
+          apiURL: "https://api.avascan.info/v2/network/mainnet/evm/43114/etherscan",
+          browserURL: "https://cchain.explorer.avax.network"
         }
       }
     ]

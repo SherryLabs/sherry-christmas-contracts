@@ -9,7 +9,7 @@ import {Strings} from "@openzeppelin/contracts/utils/Strings.sol";
 /// @custom:security-contact hello@getsherry.app
 contract SherryChristmas is ERC1155, Ownable {
     // Maximum supply for each token ID
-    uint8 public constant MAX_SUPPLY = 5;
+    uint8 public MAX_SUPPLY = 5;
 
     // Total number of unique token types
     uint8 public constant TOTAL_TOKENS = 10;
@@ -49,5 +49,9 @@ contract SherryChristmas is ERC1155, Ownable {
 
     function tokenExists(uint256 _tokenId) public pure returns (bool) {
         return _tokenId > 0 && _tokenId <= TOTAL_TOKENS;
+    }
+
+    function setMaxSupply(uint8 _maxSupply) external onlyOwner {
+        MAX_SUPPLY = _maxSupply;
     }
 }
