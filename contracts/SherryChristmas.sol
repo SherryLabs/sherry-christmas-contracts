@@ -37,14 +37,14 @@ contract SherryChristmas is ERC1155, Ownable {
         return string(abi.encodePacked(baseURI, Strings.toString(_tokenId), ".json"));
     }
 
-    function mint(uint256 _tokenId) external {
+    function mint(uint256 _tokenId, address _to) external {
         require(tokenExists(_tokenId), "SherryChristmas: tokenId out of range");
         require(
             _minted[_tokenId] < MAX_SUPPLY,
             "SherryChristmas: token supply reached maximum"
         );
         _minted[_tokenId]++;
-        _mint(msg.sender, _tokenId, 1, "");
+        _mint(_to, _tokenId, 1, "");
     }
 
     function tokenExists(uint256 _tokenId) public pure returns (bool) {
